@@ -1,0 +1,17 @@
+#!/usr/bin/python
+# Brute force
+NUMBERS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+def hasremainder(big,smalls):
+    for small in smalls:
+        if big % small != 0: return True
+    return False
+
+n = 1
+while True:
+    if not hasremainder(n,NUMBERS): break
+    n += 1
+
+print 'The smallest number that is divisible by',
+for number in NUMBERS[:-1]:
+    print str(number)+',',
+print 'and', str(NUMBERS[-1])+',', 'is:', n

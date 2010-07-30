@@ -1,0 +1,9 @@
+#!/usr/bin/python
+NUMBER=4000000
+c = 0
+n = [1,2]
+print n[0], ':', c
+while n[-1] < NUMBER:  # While the latest number in the sequence is less than NUMBER:
+    if n[-1] % 2 == 0: c += n[-1]  # If the latest number in the sequence is even: add it to variable n
+    print n[-1], ':', c  # Print the latest number in the sequence and the cumulative total of even numbers in the sequence
+    n.append(n[-1] + n[-2])  # Generate the next number in the sequence by adding together the last number and the second last number

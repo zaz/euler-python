@@ -1,0 +1,16 @@
+#!/usr/bin/python
+from myMath import getPrimes
+PRIMES_BELOW=2000000
+SEPARATOR='\t'
+primes = getPrimes()
+answer = 0
+i = 1
+for prime in primes:
+    if prime >= PRIMES_BELOW:
+        break
+    else:
+        answer += prime
+        print str(i)+str(SEPARATOR)+str(prime)+str(SEPARATOR)+str(answer)
+    i += 1
+
+print answer

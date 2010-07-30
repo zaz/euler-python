@@ -1,0 +1,6 @@
+#!/usr/bin/python
+from myMath import getPrimeFactors_inPowers
+NUMBER=600851475143
+
+print 'Prime factors of', str(NUMBER)+':'
+print getPrimeFactors_inPowers(NUMBER)

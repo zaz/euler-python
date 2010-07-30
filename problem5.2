@@ -1,0 +1,16 @@
+#!/usr/bin/python
+from myMath import getPrimeFactors_inMaxPowers
+NUMBERS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+newFactors = getPrimeFactors_inMaxPowers(NUMBERS)
+
+answer = 1
+i = 0
+while i < len(newFactors[0]):
+    answer = answer * pow(newFactors[0][i],newFactors[1][i])
+    i += 1
+    
+print 'The smallest number that is divisible by',
+for number in NUMBERS[:-1]:
+    print str(number)+',',
+print 'and', str(NUMBERS[-1])+',', 'is:', answer

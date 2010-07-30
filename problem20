@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+from math import factorial
+total = 0
+for digit in str(factorial(100)):
+    total += int(digit)
+print total

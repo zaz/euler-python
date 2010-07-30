@@ -1,0 +1,11 @@
+#!/usr/bin/python
+DIGITS=3
+HIGHEST=pow(10,DIGITS)
+answer = 0
+for a in reversed(xrange(1,HIGHEST)):
+    for b in reversed(xrange(1,HIGHEST)):
+        print a, b
+        if str(a * b) == str(a * b)[::-1] and a * b > answer:
+            answer = a * b
+
+print 'Highest palindromic:', answer  

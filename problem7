@@ -1,0 +1,12 @@
+#!/usr/bin/python
+from myMath import getPrimes
+TARGET=10001
+numbers = getPrimes()
+i = 1
+for number in numbers:
+    if i == TARGET:
+        answer = number
+        break
+    else: i += 1
+
+print answer

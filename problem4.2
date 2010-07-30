@@ -1,0 +1,26 @@
+#!/usr/bin/python
+DIGITS=3
+HIGHEST=pow(10,DIGITS)
+
+def findHighestMultiple(number,maximum):
+    '''Returns the highest multiple of NUMBER that is no higher than MAXIMUM'''
+    i = maximum
+    while i % number:
+        i -= 1
+    return i
+
+def isPalindrome(number):
+    '''Returns true if NUMBER is a palindrome and false otherwise.'''
+    return str(number) == str(number)[::-1]
+
+answer = 0
+for a in reversed(xrange(1,HIGHEST)):
+    b = findHighestMultiple(11,999)
+    if b > a:  # To prevent wasting time by repeating work
+        b = a - (a % 11)
+    while b > 0:
+        if isPalindrome(a * b) and a * b > answer:
+            answer = a * b
+        b -= 11
+
+print 'Highest palindromic made from two', str(DIGITS)+'-digit', 'numbers:', answer  

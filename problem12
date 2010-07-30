@@ -1,0 +1,11 @@
+#!/usr/bin/python
+TARGET=500
+from myMath import getTriangles
+from myMath import getFactors
+from time import sleep
+
+triangles = getTriangles()
+for triangle in triangles:
+    divisors = len(getFactors(triangle))
+    print triangle, ':', divisors
+    if divisors > TARGET: break

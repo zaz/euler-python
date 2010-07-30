@@ -1,0 +1,16 @@
+#!/usr/bin/python
+START=1
+END=999
+MULTIPLE_A=3
+MULTIPLE_B=5
+
+def sumNumbersBetween(start, end):
+    '''Returns the sum of the numbers between START and END, including START and END.'''
+    return ( end * (end + 1) / 2 ) + start - 1
+ 
+def sumMultiples(start, end, number):
+    '''Returns the sum of the multiples of NUMBER between START and END, including START and END.'''
+    return sumNumbersBetween(start, end/number) * number
+
+print sumMultiples(START, END, MULTIPLE_A), '+', sumMultiples(START, END,  MULTIPLE_B), '-', sumMultiples(START, END,  MULTIPLE_A * MULTIPLE_B), '=', sumMultiples(START, END,  MULTIPLE_A) + sumMultiples(START, END,  MULTIPLE_B) - sumMultiples(START, END,  MULTIPLE_A * MULTIPLE_B)
+

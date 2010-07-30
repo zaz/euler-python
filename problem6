@@ -1,0 +1,11 @@
+#!/usr/bin/python
+NUMBER=100
+sumFirst = 0
+squareFirst = 0
+for number in xrange(1,NUMBER+1):
+    sumFirst += number
+    squareFirst += pow(number,2)
+
+sumFirst = pow(sumFirst,2)
+
+print sumFirst, '-', squareFirst, '=', sumFirst - squareFirst
