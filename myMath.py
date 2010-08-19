@@ -22,7 +22,7 @@ def getTriangles():
     while True:
         yield triangle
         base += 1
-        triangle += base        
+        triangle += base
 
 def isFactor(number,factor):
     if number % factor: return False  # If it is not a factor, return false
@@ -37,7 +37,7 @@ def isPrime(number):
     i = 2
     while i * i <= number:  # While i squared is less than or equal to number:
         if number % i == 0: return False  # If the remainder of number/i = 0: return false
-        i += 1  # Increment 
+        i += 1  # Increment
     return True  # Return true
 
 def getFactors_forSingleNumber(number):
@@ -72,7 +72,7 @@ def getPrimeFactors_inFull_forSingleNumber(factor):
         if factor % number == 0:
             smallNumber = getPrimeFactors_inFull(number)
             bigNumber = getPrimeFactors_inFull(factor/number)
-            primeFactors.extend(smallNumber)  
+            primeFactors.extend(smallNumber)
             primeFactors.extend(bigNumber)
             return primeFactors
     return [1]
@@ -85,7 +85,7 @@ def getPrimeFactors_inFull(number):
             if item < 2: continue
             itemFactors = getPrimeFactors_inFull_forSingleNumber(item)
             if type(itemFactors).__name__ == 'list':
-                factors.extend(itemFactors)      
+                factors.extend(itemFactors)
             else: factors.append(itemFactors)
         factors.sort()
         return factors
@@ -99,7 +99,7 @@ def getPrimeFactors_inPowers(factor):
     for originalFactor in originalFactors:
         if newFactors[0].count(originalFactor) > 0:  # If number is already in the list
             newFactors[1][newFactors[0].index(originalFactor)] += 1  # Add 1 to it's power
-        else: 
+        else:
             newFactors[0].append(originalFactor)  # Add the number to the list
             newFactors[1].append(1)  # Add 1 as it's power
     return newFactors
@@ -113,7 +113,7 @@ def getPrimeFactors_inMaxPowers(factors):
             if newFactors[0].count(originalFactors[0][i]) > 0:  # If number is already in the list
                 if newFactors[1][newFactors[0].index(originalFactors[0][i])] < originalFactors[1][i]:  # Use the biggest power out of the two
                     newFactors[1][newFactors[0].index(originalFactors[0][i])] = originalFactors[1][i]
-            else: 
+            else:
                 newFactors[0].append(originalFactors[0][i])  # Add the number to the list
                 newFactors[1].append(originalFactors[1][i])  # Add it's power
             i += 1
