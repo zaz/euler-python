@@ -96,13 +96,13 @@ class Grid:
     def solved(self):
         grid = self.grid
         string = ''
-        for line in grid:
-            for num in line:
+        for l,line in enumerate(grid):
+            for n,num in enumerate(line):
                 if num in self.nums: string += '\033[1;31m'
                 string += str(num).zfill(2)
                 if num in self.nums: string += '\033[0m'
-                if num is not line[-1]: string += ' '  # (error: dupe num)
-            if line is not grid[-1]: string += '\n'
+                if n is not len(line)-1: string += ' '
+            if l is not len(grid)-1: string += '\n'
         return string
 
 
