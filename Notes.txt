@@ -1,1 +1,0 @@
-The Highest palendromic that can be created from the product of two four-digit numbers, is: 99000099
